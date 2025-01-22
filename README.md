@@ -100,3 +100,37 @@ oh-my-posh init pwsh --config 'C:/Users/user/Posh/stelbent-compact.minimal.withc
 ⚠️ This line should replace the `oh-my-posh init pwsh | Invoke-Expression` that was previously added to the Profile file. 
 
 Now reload your profile and the theme should be updated.
+
+### Adding python .venv to PowerShell segments 
+
+By default, python .venv won't necessarly be added to your PowerShell config. Luckily this can be changed by modifiying the .json used for the PowerShell theme. All instructions for creating custom configurations with oh-my-posh are listed [here](https://ohmyposh.dev/docs/configuration/general).
+
+Adding the following block at the end of the segment will allow to display the python version and .venv that is currently used :
+
+```
+{
+  "type": "python",
+  "style": "powerline",
+  "powerline_symbol": "\ue0b0",
+  "foreground": "#100e23",
+  "background": "#906cff",
+  "template": "  {{ .Full }} {{ if .Venv }}{{ .Venv }}{{ end }}",
+  "properties": {
+      "fetch_virtual_env": true
+    }
+  }
+```
+
+See the theme file in the repo to know where to place this block in the segments.
+
+### Installing a custom nerd font for icons
+
+The default font in PowerShell won't readme most icons - such as the python icon for instance. To fix this, nerd fonts can be downloaded. For instance the `CaskaydiaCove Nerd Font` can be downloaded [here](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip)
+
+To install the font, unzip the downloaded folder, then open it, right click on the font you want to install and click 'install'.
+
+### Set a font in PowerShell
+
+Then, it is needed to select this font in the PowerShell setting file. To do that, open the terminal and click on the little down facing arrow on the upper part of the terminal. Then hit 'settings'. Then go to '> Windows PowerShell > Appearance' and chose the desired font. 
+
+![image](https://github.com/user-attachments/assets/bc761bfd-d284-4c2d-a709-2d0cc9508e9a)
