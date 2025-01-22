@@ -1,0 +1,4 @@
+Import-Module posh-git
+Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
+oh-my-posh init pwsh --config 'C:/Users/user/Posh/stelbent-compact.minimal.withcondaenv.omp.json' | Invoke-Expression
+fnm env --use-on-cd | Out-String | Invoke-Expression
