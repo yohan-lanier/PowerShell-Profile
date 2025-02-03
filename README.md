@@ -6,14 +6,14 @@ Custom PowerShell config using [oh-my-posh](https://ohmyposh.dev/) themes and [p
 Prior to installing anything, you will need to allow PowerShell to run Scripts. Check the script execution policy setting by executing `Get-ExecutionPolicy`. If it is not set to `unrestricted`, use the following line to change the status : 
 
 ```
-set-ExecutionPolicy unrestricted -Scope localMachine
+set-ExecutionPolicy unrestricted -Scope CurrentUser
 ```
 
 This will be usefull for `posh-git` as well as for running `conda` commands in PowerShell. 
 
 ## Get access to your PROFILE file
 
-To acess your PowerShell profile, type :
+To access your PowerShell profile, type :
 
 ```
 notepad $PROFILE
